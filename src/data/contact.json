@@ -1,0 +1,27 @@
+{
+    "sectionTitle": "Contacts",
+    "contactImage": "/public/contact.png",
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "#",
+        "image": "/public/github.png"
+      },
+      {
+        "name": "Twitter",
+        "url": "#",
+        "image": "/public/xlogoTwitt.png"
+      },
+      {
+        "name": "Instagram",
+        "url": "#",
+        "image": "/public/Instagram-Logo.wine.png"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "#",
+        "image": "/public/linkedin.webp"
+      }
+    ]
+  }
+  

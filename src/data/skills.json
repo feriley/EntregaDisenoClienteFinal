@@ -1,0 +1,54 @@
+{
+    "frontEnd": [
+      {
+        "skill": "Java",
+        "percentage": "50%",
+        "image": "./public/java.webp"
+      },
+      {
+        "skill": "PHP",
+        "percentage": "70%",
+        "image": "./public/php-15.png"
+      },
+      {
+        "skill": "MySQL",
+        "percentage": "60%",
+        "image": "./public/mysqlaa.webp"
+      }
+    ],
+    "backEnd": [
+      {
+        "skill": "HTML, CSS, JS",
+        "percentage": "40%",
+        "image": "./public/htmlcssjs.png"
+      },
+      {
+        "skill": "React",
+        "percentage": "50%",
+        "image": "./public/react.webp"
+      },
+      {
+        "skill": "Node JS",
+        "percentage": "55%",
+        "image": "./public/nodejs.png"
+      }
+    ],
+    "others": [
+      {
+        "skill": "Figma",
+        "percentage": "80%",
+        "image": "./public/FIGMA.png"
+      },
+      {
+        "skill": "Git",
+        "percentage": "65%",
+        "image": "./public/git.webp"
+      },
+      {
+        "skill": "Tailwind",
+        "percentage": "75%",
+        "image": "./public/TAILWIND.Default"
+      }
+    ]
+  }
+  

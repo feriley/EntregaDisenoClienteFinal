@@ -1,0 +1,14 @@
+[
+  {
+    "jobTitle": "IPD Technician 2020-2022",
+    "company": "Virgen de Valme Hospital",
+    "description": "Magnetic Resonance, CT Scan & X-Ray. Emergency and Inpatient Services",
+    "image": "/public/reso.jpg"
+  },
+  {
+    "jobTitle": "Internship 2024-2025",
+    "company": "NTT DATA",
+    "description": "Internship to complete the FCT in NTT DATA company",
+    "image": "/public/ntt.png"
+  }
+]

@@ -1,0 +1,30 @@
+---
+// Importa los datos desde el archivo JSON
+import navigationData from '../data/navigation.json';
+---
+
+<nav class="fixed top-0 left-0 w-full h-16 bg-[#2c3e50] text-[#ecf0f1] flex items-center justify-start px-[30%] z-50">
+  <ul class="list-none flex gap-2 m-0 p-0">
+    {navigationData.links.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          class="text-[#ecf0f1] text-lg font-bold hover:text-[#1abc9c] transition-colors"
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="flex items-center gap-2 ml-5">
+    {navigationData.socialLinks.map((social) => (
+      <a href={social.href}>
+        <img
+          src={social.src}
+          alt={social.alt}
+          class="w-8 h-8 transition-transform hover:scale-110"
+        />
+      </a>
+    ))}
+  </div>
+</nav>

@@ -1,0 +1,16 @@
+---
+// Importamos los datos de footer con tipado
+import footerData from '../data/footer.json';
+
+interface FooterData {
+  copyright: string;
+  description: string;
+}
+---
+
+<footer class="bg-gray-800 text-gray-300 py-6">
+  <div class="max-w-5xl mx-auto text-center text-sm">
+    <p>{footerData.copyright}</p>
+    <p>{footerData.description}</p>
+  </div>
+</footer>

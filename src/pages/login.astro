@@ -1,0 +1,89 @@
+---
+---
+
+<script>
+  // Usar un EventListener para manejar el login
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("login-form");
+    const usernameInput = document.getElementById("username") as HTMLInputElement | null;
+    const passwordInput = document.getElementById("password") as HTMLInputElement | null;
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!usernameInput || !passwordInput) {
+        alert("Ocurrió un error. Por favor, recarga la página.");
+        return;
+      }
+
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+
+      if (username === "admin" && password === "Abcd1234") {
+        const fakeToken = {
+          sub: "1",
+          name: "admin",
+          exp: new Date().getTime() + 15 * 60000, // Expiración en 15 minutos
+        };
+
+        localStorage.setItem("fakeToken", JSON.stringify(fakeToken));
+        alert("Login exitoso. Redirigiendo a la consola de administración...");
+        window.location.href = "/admin"; // Redirigir a la consola de administración
+      } else {
+        alert("Credenciales incorrectas. Intenta nuevamente.");
+      }
+    });
+  });
+</script>
+---
+
+<section class="login-section">
+  <h1 class="text-3xl font-bold mb-6">Iniciar Sesión</h1>
+  <form id="login-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <!-- Usuario -->
+    <div class="mb-4">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="username"
+      >
+        Usuario
+      </label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Escribe tu usuario"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        required
+      />
+    </div>
+
+    <!-- Contraseña -->
+    <div class="mb-4">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="password"
+      >
+        Contraseña
+      </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Escribe tu contraseña"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        required
+      />
+    </div>
+
+    <!-- Botón de inicio de sesión -->
+    <div class="flex items-center justify-between">
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Iniciar Sesión
+      </button>
+    </div>
+  </form>
+</section>

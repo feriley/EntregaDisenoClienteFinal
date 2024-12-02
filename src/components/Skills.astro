@@ -1,0 +1,67 @@
+---
+type Skill = {
+  skill: string;
+  image: string;
+  percentage: string;
+};
+
+type SkillsData = {
+  frontEnd: Skill[];
+  backEnd: Skill[];
+  others: Skill[];
+};
+
+const skillsData: SkillsData = await import('../data/skills.json');
+---
+
+<section id="skills" class="py-12 bg-[#f4f4f4] text-left">
+  <div class="flex items-center mb-8 pl-10">
+    <img src="./public/skills.png" alt="Icono" class="w-12 h-12 mr-2" />
+    <h2 class="text-3xl font-semibold">Skills</h2>
+  </div>
+
+  <!-- Front-End -->
+  <div>
+    <h3 class="text-2xl text-center mb-5">Front-End</h3>
+    <div class="flex justify-between gap-5 px-6">
+      {skillsData.frontEnd.map((skill) => (
+        <div class="flex flex-col items-center justify-center w-1/4 bg-[#242EA0] p-5 rounded-lg shadow-lg h-72">
+          <div class="w-36 h-36 rounded-full bg-[#D9D9D9] flex justify-center items-center mb-5">
+            <span class="text-3xl font-bold text-[#141414]">{skill.percentage}</span>
+          </div>
+          <img src={skill.image} alt={skill.skill} class="w-16 h-auto mt-2" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Back-End -->
+  <div>
+    <h3 class="text-2xl text-center mb-5">Back-End</h3>
+    <div class="flex justify-between gap-5 px-6">
+      {skillsData.backEnd.map((skill) => (
+        <div class="flex flex-col items-center justify-center w-1/4 bg-[#242EA0] p-5 rounded-lg shadow-lg h-72">
+          <div class="w-36 h-36 rounded-full bg-[#D9D9D9] flex justify-center items-center mb-5">
+            <span class="text-3xl font-bold text-[#141414]">{skill.percentage}</span>
+          </div>
+          <img src={skill.image} alt={skill.skill} class="w-16 h-auto mt-2" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Others -->
+  <div>
+    <h3 class="text-2xl text-center mb-5">Others</h3>
+    <div class="flex justify-between gap-5 px-6">
+      {skillsData.others.map((skill) => (
+        <div class="flex flex-col items-center justify-center w-1/4 bg-[#242EA0] p-5 rounded-lg shadow-lg h-72">
+          <div class="w-36 h-36 rounded-full bg-[#D9D9D9] flex justify-center items-center mb-5">
+            <span class="text-3xl font-bold text-[#141414]">{skill.percentage}</span>
+          </div>
+          <img src={skill.image} alt={skill.skill} class="w-16 h-auto mt-2" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

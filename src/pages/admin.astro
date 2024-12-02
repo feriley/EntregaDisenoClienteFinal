@@ -1,0 +1,61 @@
+---
+import AdminTable from "../components/AdminTable"; // Importar la tabla de administración
+--- 
+
+<script>
+  // Este código se ejecutará solo en el cliente
+  function checkAuthentication() {
+    try {
+      const token = localStorage.getItem("fakeToken");
+      console.log("Token encontrado:", token); // Log para depuración
+      if (!token) {
+        console.log("No hay token. Redirigiendo a /login");
+        window.location.href = "/Login";
+        return false;
+      }
+
+      const { exp } = JSON.parse(token);
+
+      if (!exp || isNaN(exp)) {
+        console.error("Token inválido. Redirigiendo a /login");
+        window.location.href = "/Login";
+        return false;
+      }
+
+      const currentTime = new Date().getTime();
+      console.log("Hora actual:", currentTime, "Expiración del token:", exp);
+
+      if (currentTime > exp) {
+        console.log("El token ha expirado. Redirigiendo a /login");
+        localStorage.removeItem("fakeToken");
+        window.location.href = "/Login";
+        return false;
+      }
+
+      console.log("Autenticación exitosa.");
+      return true;
+    } catch (error) {
+      console.error("Error en la autenticación:", error);
+      localStorage.removeItem("fakeToken");
+      window.location.href = "/Login";
+      return false;
+    }
+  }
+
+  // Llamar a la función y actualizar la visibilidad del elemento en el cliente
+  document.addEventListener("DOMContentLoaded", () => {
+    const authenticated = checkAuthentication();
+    const adminSection = document.getElementById("admin-console");
+    if (adminSection) {
+      adminSection.style.display = authenticated ? "block" : "none";
+    }
+  });
+</script>
+
+<section id="admin-console" style="display: none;" class="py-12 bg-gray-100 px-10">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">Consola ADMIN</h2>
+    <!-- Renderizar tabla de administración -->
+    <AdminTable client:only="react" />
+  </div>
+</section>

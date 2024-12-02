@@ -1,0 +1,11 @@
+{
+    "backgroundImage": "../public/cielo.jpg",
+    "icon": "./public/aboutme.png",
+    "iconAlt": "Icon",
+    "title": "About Me",
+    "name": "Fernando Iglesias Leyva",
+    "photo": "./public/img-removebg-preview.png",
+    "photoAlt": "Picture of Fernando",
+    "description": "Second-year student in Web Application Development at Santa Joaquina de Vedruna Sevilla. Highly motivated and diligent, looking for opportunities to apply my technical knowledge, problem-solving skills, and innovative mindset in a dynamic and challenging environment."
+  }
+  

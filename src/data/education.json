@@ -1,0 +1,14 @@
+[
+  {
+    "titulo": "Higher Degree in Web Application Development",
+    "centro": "Santa Joaquina de Vedruna, Seville",
+    "fecha": "2023-2025",
+    "imagen": "./public/sombrerolicemc.webp"
+  },
+  {
+    "titulo": "Higher Degree in Imaging for Diagnosis and Nuclear Medicine",
+    "centro": "Cesur Formación, Seville, Olympic Stadium",
+    "fecha": "2018-2020",
+    "imagen": "./public/sombrerolicemc.webp"
+  }
+]

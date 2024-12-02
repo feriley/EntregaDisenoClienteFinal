@@ -1,0 +1,39 @@
+---
+type WorkExperience = {
+  jobTitle: string;
+  company: string;
+  description: string;
+  image: string;
+};
+
+import workDataRaw from '../data/workExperience.json';
+const workData: WorkExperience[] = Array.isArray(workDataRaw) ? workDataRaw : [];
+---
+
+<section id="trabajo" class="py-12 bg-gray-100 px-10">
+  <div class="trabajo-item">
+    <div class="trabajo-titulo flex items-center mb-10">
+      <img src="/public/maletin.png" alt="Icono Técnico" class="w-12 h-12 mr-4">
+      <h2 class="text-4xl font-bold text-gray-800">Work Experience</h2>
+    </div>
+
+    {workData.length > 0 ? (
+      workData.map((experience) => (
+        <div class="experiencia flex items-center bg-white p-6 mb-8 shadow-lg rounded-lg">
+          <div class="detalle flex-1 text-left">
+            <h3 class="text-2xl font-bold text-gray-800">{experience.jobTitle}</h3>
+            <p class="text-lg text-gray-600">{experience.company}</p>
+          </div>
+          <div class="descripcion flex-1 text-center">
+            <p class="text-lg text-gray-800">{experience.description}</p>
+          </div>
+          <div class="imagen flex-1 text-right">
+            <img src={experience.image} alt={experience.company} class="w-96 h-auto rounded-lg shadow-md">
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>No experience data available</p>
+    )}
+  </div>
+</section>

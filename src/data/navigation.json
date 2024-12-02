@@ -1,0 +1,16 @@
+{
+    "links": [
+      { "href": "#inicio", "label": "Init" },
+      { "href": "#estudios", "label": "Studies" },
+      { "href": "#skills", "label": "Skills" },
+      { "href": "#trabajo", "label": "WorkExp" },
+      { "href": "#proyectos", "label": "Projects" },
+      { "href": "#contactos", "label": "Contact" }
+    ],
+    "socialLinks": [
+      { "href": "#", "src": "public/github.png", "alt": "Icono Github" },
+      { "href": "#", "src": "public/Instagram-Logo.wine.png", "alt": "Icono Instagram" },
+      { "href": "#", "src": "public/xlogoTwitt.png", "alt": "Icono X" }
+    ]
+  }
+  

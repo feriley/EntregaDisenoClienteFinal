@@ -1,0 +1,37 @@
+[
+    {
+      "title": "PHP Clon Twitter",
+      "description": "Create using PHP a Twitters Clon Web",
+      "image": "./public/phptwitt.png",
+      "technologies": [
+        {
+          "name": "PHP",
+          "image": "./public/php-15.png"
+        },
+        {
+          "name": "MySQL",
+          "image": "./public/mysqlaa.webp"
+        }
+      ],
+      "githubLink": "https://github.com/feriley",
+      "projectLink": "https://github.com/feriley"
+    },
+    {
+      "title": "PHP Clon Tesla",
+      "description": "With Figma and HTML build a Web for Tesla",
+      "image": "./public/tesla.jfif",
+      "technologies": [
+        {
+          "name": "Figma",
+          "image": "./public/FIGMA.png"
+        },
+        {
+          "name": "HTML/CSS/JS",
+          "image": "./public/htmlcssjs.png"
+        }
+      ],
+      "githubLink": "https://github.com/feriley",
+      "projectLink": "https://github.com/feriley"
+    }
+  ]
+  

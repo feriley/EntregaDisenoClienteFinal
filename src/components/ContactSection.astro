@@ -1,0 +1,14 @@
+---
+// Importa el formulario
+import ContactForm from "../components/ContactForm";
+---
+
+<section id="contacto" class="py-12 bg-gray-100 px-10">
+  <div class="trabajo-titulo flex items-center mb-10">
+    <img src="./public/contact.png" alt="Icono Contacto" class="w-12 h-12 mr-4">
+    <h2 class="text-4xl font-bold text-gray-800">Contact Me</h2>
+  </div>
+
+  <!-- Renderiza el formulario -->
+  <ContactForm client:only="react" />
+</section>

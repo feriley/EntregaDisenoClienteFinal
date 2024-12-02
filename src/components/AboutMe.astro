@@ -1,0 +1,32 @@
+---
+const url = new URL(Astro.request.url, 'http://dummybase.com');  // Asegurarse de tener una URL base
+const lang = url.searchParams.get('lang') || 'es'; // Detectar idioma
+const data = await import(`../data/personalInfo-${lang}.json`);
+---
+
+<section
+  id="inicio"
+  class="h-screen bg-cover bg-center text-white text-center px-5 py-20"
+  style={`background-image: url('${data.backgroundImage}');`}
+>
+  <!-- Icono y Título -->
+  <div class="flex items-center justify-start mt-5 pl-10">
+    <img src={data.icon} alt={data.iconAlt} class="w-11 h-11 mr-2" />
+    <h2 class="text-2xl">{data.title}</h2>
+  </div>
+
+  <!-- Nombre y Foto -->
+  <div class="flex items-center justify-start w-4/5 mx-auto mt-10">
+    <h1 class="text-5xl mr-5 flex-1 text-left">{data.name}</h1>
+    <img
+      src={data.photo}
+      alt={data.photoAlt}
+      class="w-48 h-48 rounded-full flex-none"
+    />
+  </div>
+
+  <!-- Descripción -->
+  <p class="text-black mt-10 mx-auto w-4/5 text-2xl leading-relaxed text-justify p-6 rounded-lg">
+    {data.description}
+  </p>
+</section>
